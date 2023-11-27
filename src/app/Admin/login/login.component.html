@@ -1,3 +1,4 @@
+
 <section class="h-full gradient-form bg-gray-200 md:h-screen">
     <div class="container py-12 px-6 h-auto">
       <div class="flex justify-center items-center flex-wrap h-full g-12 text-gray-800">
@@ -14,8 +15,8 @@
                     />
                     <h4 class="text-xl font-semibold mt-1 mb-12 pb-1">Login</h4>
                   </div>
-                  <form>
-  
+                  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
                     <div class="mb-2">
                       <input
                         type="email"
@@ -23,7 +24,7 @@
                         placeholder="Email"
                         formControlName="email"
                       />
-                      <div  class="my-1 px-1 py-1 text-red-600">
+                      <div *ngIf="email?.invalid && email?.touched" class="my-1 px-1 py-1 text-red-600">
                         <span>* L'email est requis </span>
                       </div>
                     </div>
@@ -34,7 +35,7 @@
                         placeholder="Mot de passe"
                         formControlName="password"
                       />
-                      <div  class="my-1 px-1 py-1 text-red-600">
+                      <div *ngIf="password?.invalid && password?.touched" class="my-1 px-1 py-1 text-red-600">
                         <span>* Le mot de passe est requis et doit avoir au moins 8 caractères </span>
                       </div>
                     </div>
@@ -58,13 +59,11 @@
                       </button>
                       <a class="text-gray-500" href="#!">Mot de passe oublié ?</a>
                     </div>
-                    <!-- <div class="flex items-center justify-between pb-6">
-  
-                    </div> -->
+
                   </form>
                 </div>
               </div>
-  
+
             </div>
           </div>
         </div>
