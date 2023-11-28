@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "../../Shared/Services/auth.service";
+import { Route, Router } from '@angular/router';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +13,8 @@ export class LoginComponent {
   loginForm:FormGroup
   constructor(
     private fb:FormBuilder,
-    private authSevice:AuthService
+    private authSevice:AuthService,
+    private router:Router
   ) {
     this.loginForm=this.fb.group({
       email:['',[Validators.email]],
@@ -25,6 +28,7 @@ export class LoginComponent {
     return this.loginForm.get('password');
    }
    onSubmit(){
-    this.authSevice.login(this.loginForm.value)
+    this.authSevice.login(this.loginForm.value);
    }
+
 }
