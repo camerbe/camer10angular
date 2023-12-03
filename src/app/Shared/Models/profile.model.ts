@@ -3,7 +3,7 @@ export interface ProfileModel {
     data:dataProfileModel,
     token:string,
     role:string,
-    expiresIn:number,
+    expiresIn:Date,
     message:string
 }
 
@@ -16,6 +16,8 @@ export interface dataProfileModel{
     two_factor_secret: string,
     two_factor_recovery_codes: string,
     two_factor_confirmed_at: string,
-    role_id: number
-    
+    role_id: number,
+    role: string
+
+
 }

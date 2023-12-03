@@ -10,8 +10,8 @@ const routes: Routes = [
     title: 'login',
     component:LoginComponent
   },
-   
-    
+
+
 ];
 
 @NgModule({

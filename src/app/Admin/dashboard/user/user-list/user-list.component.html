@@ -1,0 +1,42 @@
+<div class="block w-full overflow-x-auto">
+  <div class="relative w-full max-w-full flex-grow flex-1">
+    <h3 class="uppercase py-3 p-3 font-semibold text-base text-gray-900 dark:text-gray-50">Liste des users</h3>
+  </div>
+  <div class="flex justify-end items-center mb-2 mr-2">
+    <a
+      [routerLink]="['/dashboard/users/add']"
+      routerLinkActive="text-white-600 bg-blue-800 border-blue-500"
+      [routerLinkActiveOptions]="{exact:true}"
+      class="bg-blue-700 text-white active:bg-blue-500 text-xs font-bold uppercase px-3 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">
+       <span class="inline-flex mr-1">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"  stroke="currentColor" class="w-6 h-6 font-bold ">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zM4 19.235v-.11a6.375 6.375 0 0112.75 0v.109A12.318 12.318 0 0110.374 21c-2.331 0-4.512-.645-6.374-1.766z" />
+        </svg>
+       </span>
+      Ajout des users
+    </a>
+  </div>
+
+
+  <table class="items-center w-full bg-transparent border-collapse">
+    <thead>
+    <tr>
+      <th class="px-4 bg-gray-100 dark:bg-gray-600 text-gray-500 dark:text-gray-100 align-middle border border-solid border-gray-200 dark:border-gray-500 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">#</th>
+      <th class="px-4 bg-gray-100 dark:bg-gray-600 text-gray-500 dark:text-gray-100 align-middle border border-solid border-gray-200 dark:border-gray-500 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">Nom & Prénom</th>
+      <th class="px-4 bg-gray-100 dark:bg-gray-600 text-gray-500 dark:text-gray-100 align-middle border border-solid border-gray-200 dark:border-gray-500 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left min-w-140-px">Email</th>
+      <th class="px-4 bg-gray-100 dark:bg-gray-600 text-gray-500 dark:text-gray-100 align-middle border border-solid border-gray-200 dark:border-gray-500 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left min-w-140-px">Rôle</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of users;index as i" class="text-gray-700 dark:text-gray-100">
+      <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">{{i+1}}</td>
+      <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">{{user.nom}} {{user.prenom}}</td>
+      <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">{{user.email}}</td>
+      <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">{{user.role}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
+

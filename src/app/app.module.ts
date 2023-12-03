@@ -10,14 +10,22 @@ import { AuthInterceptor } from './Shared/Interceptor/auth.interceptor';
 import { DashboardComponent } from './Admin/dashboard/dashboard.component';
 import { AdministrationModule } from './Admin/administration/administration.module';
 import { UserComponent } from './Admin/dashboard/user/user.component';
+import { DashboardHomeComponent } from './Admin/dashboard/dashboard-home/dashboard-home.component';
+import { UserListComponent } from './Admin/dashboard/user/user-list/user-list.component';
 
 
+
+
+// @ts-ignore
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    UserComponent
+    UserComponent,
+    DashboardHomeComponent,
+    UserListComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -31,6 +39,7 @@ import { UserComponent } from './Admin/dashboard/user/user.component';
       provide:HTTP_INTERCEPTORS,
       useClass:AuthInterceptor,
       multi:true
+
     }
   ],
   bootstrap: [AppComponent]
